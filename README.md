@@ -12,7 +12,7 @@ THANK YOU
 
 Description:
 
-This document serves as a breakdown of the design and functionality of the SpringBoot application created for Nirvana as part of the coding challenge requirements.
+This document serves as a breakdown of the design and functionality of the SpringBoot application.
 
 Overview : Each of the following project elements and their relationships will be examined in detail
 
