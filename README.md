@@ -3,7 +3,7 @@ Date: May 2, 2022
 
 ****IMPORTANT****
 
-BEFORE RUNNING THE APPLICATION, RUN 'docker compose up -d' IN THE TERMINAL INSIDE ../docker/ DIRECTORY
+BEFORE RUNNING THE APPLICATION, INSTALL Docker, and RUN 'docker compose up -d' IN THE TERMINAL INSIDE ../docker/ DIRECTORY
 
 In RestClient.java, replace the value in TOKEN with your own OAuth token from GitHub
 
