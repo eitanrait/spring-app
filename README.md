@@ -31,31 +31,33 @@ This document is a breakdown of the classes and their functions
 
 pom.xml :
 	
-	- This dependency manager lists all the dependencies used in this project
+	- This dependency manager lists all the required dependencies
 
 compose.yml :
 	
-	- This docker compose file runs a dockerized PostgreSQL database
+	- This docker compose file defines a dockerized PostgreSQL database
 
 Issues.java :
 	
-	- This class stores the required fields and objects for each Issues object requested from the GitHub API
+	- This is the Issues object that's requested from the GitHub API
 
 Assignee.java :
 	
-	- This class stores the id for each Assignee object requested from the GitHub API
+	- This contains the id for an Assignee object requested from the GitHub API
 
 Comment.java :
 	
-	- This class stores the comment string for each Comment object to be inserted into the comments table and to be added to the list of comments in each Issues object
+	- A Comment object is inserted into the comments table and appended to a list of comments in each Issues object
 
 TechApplication.java :
 	
-	- This class is the entry point for the SpringBoot application
+	- This is the entry point for the SpringBoot application
 
-	- The two objects, db and client, are injected with the DatabaseClient and the RestClient beans, respectively
+	- The two objects (db and client) are injected with the DatabaseClient and the RestClient beans
 	
-	- A call is made to the DatabaseClient to create the necessary relations in the PostgreSQL DB and another is made to the RestClient to request issues from the GitHub API and persist them in the DB
+	- Two calls are made:
+		- 1) is made to the DatabaseClient to create the necessary tables in the PostgreSQL DB, and 
+		- 2) is made to the RestClient to request issues from the GitHub API and persist them in the DB
 
 application.properties :
 	
@@ -63,9 +65,9 @@ application.properties :
 
 DatabaseClient.java :
 	
-	- This class contains all the needed methods to create tables, insert entries, and query the DB
+	- Contains all the required methods to create tables, insert entries, and query the DB
 	
-	- The autowired JdbcTemplate connects the Spring application to the PostgreSQL DB and executes SQL operations
+	- The autowired JdbcTemplate connects the Spring application to the data source (PostgreSQL DB) and executes SQL operations
 
 	- Two tables are created:
 		
@@ -73,15 +75,15 @@ DatabaseClient.java :
 
 	comments(issueId,commentId,comment) 	
 	
-	- The two tables are used so multiple comments can be associated with a single issueId without the need for nested comments in the issues table (flattened relations)
+	- Two tables enables multiple comments for one issueId without nesting comments in the issues table (it is a flattened table)
 
 ApplicationConfig.java :
 	
-	- This class is the source for the WebClient bean to be injected into the RestClient	
+	- This is the source for the WebClient bean to be injected into the RestClient
 	
 RestClient.java :
 
-	- This class contains the methods that make a request to the GitHub API and persist the data
+	- Contains the methods that request Issues from the GitHub API and persists them
 	
 	- As WebClient responses come in, they are converted to Issues objects and inserted into the DB
 
