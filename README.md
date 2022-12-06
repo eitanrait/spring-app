@@ -10,9 +10,7 @@ In RestClient.java, replace the value in TOKEN with your own OAuth token from Gi
 
 Description:
 
-This document serves as a breakdown of the design and functionality of the SpringBoot application.
-
-Overview : Each of the following project elements and their relationships will be examined in detail
+This document is a breakdown of the classes and their functions
 
 	pom.xml
 	compose.yml
