@@ -3,7 +3,7 @@ Date: May 2, 2022
 
 ****IMPORTANT****
 
-Install Docker, and run 'docker compose up -d' in ../docker/
+Install Docker, and run docker compose --file docker/compose.yml up -d
 
 In RestClient.java, replace the value in TOKEN with your own OAuth token from GitHub
 *****************
